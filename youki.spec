@@ -41,7 +41,7 @@ Youki is a very simple, powerful and very fast media player.
 
 %package -n %libname
 Summary: Shared libraries for %name
-Group: System/Libraires
+Group: System/Libraries
 
 %description -n %libname
 This package contains shared libraries for youki.
@@ -53,7 +53,7 @@ This package contains shared libraries for youki.
 
 %package -n %libhalcc
 Summary: Shared libraries for %name
-Group: System/Libraires
+Group: System/Libraries
 
 %description -n %libhalcc
 This package contains shared libraries for youki.
