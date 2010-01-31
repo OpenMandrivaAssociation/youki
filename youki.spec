@@ -8,6 +8,7 @@ Source0: http://redmine.youki.mp/attachments/download/25/%{name}_%{version}-1mpx
 Patch0: youki_0.05.2-link.patch
 Patch1: youki_0.05.2-gcc44.patch
 Patch2: youki_0.05.2-str-fmt.patch
+Patch3: youki_0.05.2-module-link.patch
 URL: http://youki.mp/
 BuildRequires: pygtk2.0-devel
 BuildRequires: boost-devel
@@ -73,6 +74,7 @@ This package contains development files for youki.
 %patch0 -p0 -b .link
 %patch1 -p0 -b .gcc
 %patch2 -p0 -b .str
+%patch3 -p0 -b .module
 
 sed -i -e 's#ac_boost_path/lib#ac_boost_path/%{_lib}#' -e 's#$ac_boost_path_tmp/lib#$ac_boost_path_tmp/%{_lib}#' m4/boost_base.m4
 
@@ -82,13 +84,15 @@ autoreconf -fi
 %make
 
 %install
-rm -rf %buildrot
+rm -rf %buildroot
 %makeinstall_std
+
+rm -f %buildroot%{_libdir}/youki/plugins/*/*.la
 
 %{find_lang} %{name}
 
 %clean
-rm -rf %buildrot
+rm -rf %buildroot
 
 %files -f %{name}.lang
 %defattr(-, root, root)
