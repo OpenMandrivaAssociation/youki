@@ -30,6 +30,7 @@ BuildRequires: fam-devel
 BuildRequires: libalsa-devel
 BuildRequires: cdda-devel
 BuildRequires: zip
+BuildRequires: expat-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
