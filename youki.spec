@@ -1,7 +1,7 @@
 Summary: Fast media player
 Name: youki
 Version: 0.05.2
-Release: %mkrel 5
+Release: %mkrel 6
 License: GPLv2+
 Group: Sound
 Source0: http://redmine.youki.mp/attachments/download/25/%{name}_%{version}-1mpx1.tar.gz
