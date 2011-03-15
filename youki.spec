@@ -25,6 +25,7 @@ BuildRequires: xerces-c28-devel
 BuildRequires: gettext-devel
 BuildRequires: libglademm2.4-devel
 BuildRequires: sqlite3-devel
+BuildRequires: hal-devel
 BuildRequires: libsoup-2.4-devel
 BuildRequires: curl-devel
 BuildRequires: startup-notification-devel
