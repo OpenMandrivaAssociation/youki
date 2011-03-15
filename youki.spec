@@ -11,6 +11,7 @@ Patch2: youki_0.05.2-str-fmt.patch
 Patch3: youki_0.05.2-module-link.patch
 Patch4: youki_0.05.2-gcc45.patch
 Patch5: youki_0.05.2-giomm.patch
+Patch6: youki_0.05.2-py2.7.patch
 URL: http://youki.mp/
 BuildRequires: pygtk2.0-devel
 BuildRequires: boost-devel
@@ -81,12 +82,13 @@ This package contains development files for youki.
 %patch3 -p0 -b .module
 %patch4 -p0 -b .gcc45
 %patch5 -p0 -b .gio
+%patch6 -p0 -b .py27
 
 sed -i -e 's#ac_boost_path/lib#ac_boost_path/%{_lib}#' -e 's#$ac_boost_path_tmp/lib#$ac_boost_path_tmp/%{_lib}#' m4/boost_base.m4
 
 %build
 autoreconf -fi
-%configure2_5x --disable-rpath --with-boost-python=boost_python
+%configure2_5x --disable-rpath
 %make
 
 %install
