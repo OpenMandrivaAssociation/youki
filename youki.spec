@@ -18,7 +18,6 @@ BuildRequires: boost-devel
 BuildRequires: dbus-c++-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: libgstreamer-plugins-base-devel
-BuildRequires: hal-devel
 BuildRequires: taglib-gio-devel
 BuildRequires: libofa-devel
 BuildRequires: sigx-devel
