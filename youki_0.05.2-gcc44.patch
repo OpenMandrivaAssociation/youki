@@ -1,0 +1,10 @@
+--- api/uri.cc.gcc	2010-01-31 13:53:24.000000000 +0100
++++ api/uri.cc	2010-01-31 13:53:37.000000000 +0100
+@@ -36,6 +36,7 @@
+ 
+ #include <glib.h>
+ #include <string>
++#include <cstdio>
+ #include <boost/algorithm/string.hpp>
+ #include <glibmm.h>
+ #include <iostream>

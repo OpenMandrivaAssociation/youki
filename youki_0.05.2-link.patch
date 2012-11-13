@@ -1,0 +1,49 @@
+--- musicbrainz/Makefile.am.link	2010-01-31 13:42:36.000000000 +0100
++++ musicbrainz/Makefile.am	2010-01-31 13:42:51.000000000 +0100
+@@ -3,7 +3,7 @@
+ libmpx_musicbrainz_la_CXXFLAGS = \
+ 	$(SOUP_CFLAGS) $(BOOST_FILESYSTEM_CFLAGS) $(GLIBMM_CFLAGS) $(XML_CFLAGS) -I$(top_srcdir) -I$(top_srcdir)/include -I$(top_srcdir)/mpx
+ 
+-libmpx_musicbrainz_la_LDFLAGS =  $(BOOST_FILESYSTEM_LIBS) $(SOUP_LIBS) $(top_builddir)/xmlcpp/libmpx-parsers.la
++libmpx_musicbrainz_la_LIBADD = $(SIGX_LIBS) $(BOOST_FILESYSTEM_LIBS) $(SOUP_LIBS) $(top_builddir)/xmlcpp/libmpx-parsers.la  $(top_builddir)/api/libmpx-api.la
+ 
+ libmpx_musicbrainz_la_SOURCES =  		\
+ 		mb-libxml2-sax-release.cc		\
+--- api/Makefile.am.link	2010-01-31 13:56:19.000000000 +0100
++++ api/Makefile.am	2010-01-31 13:56:35.000000000 +0100
+@@ -69,7 +69,7 @@
+ 		$(TAGLIB_LIBS)								\
+ 		$(XML_LIBS)									\
+ 		$(XLIB_LIBS)								\
+-		$(top_builddir)/xmlcpp/libmpx-parsers.la
++		$(top_builddir)/xmlcpp/libmpx-parsers.la $(top_builddir)/widgets/libmpx-widgets.la
+ 
+ if HAVE_HAL
+ libmpx_api_la_LIBADD += $(top_builddir)/libhal++/libhalcc.la
+--- com/Makefile.am.link	2010-01-31 13:58:43.000000000 +0100
++++ com/Makefile.am	2010-01-31 13:58:52.000000000 +0100
+@@ -39,7 +39,7 @@
+ 		$(PYTHON_LIBS)				\
+ 		$(PYGTK_LIBS)				\
+ 		$(SEXYMM_LIBS)				\
+-		$(top_builddir)/xmlcpp/libmpx-parsers.la
++		$(top_builddir)/xmlcpp/libmpx-parsers.la $(top_builddir)/api/libmpx-api.la
+ 
+ libmpx_view_components_la_SOURCES =	\
+ 									\
+--- Makefile.am.link	2009-04-17 14:43:05.000000000 +0200
++++ Makefile.am	2010-01-31 14:16:03.000000000 +0100
+@@ -49,11 +49,11 @@
+ endif
+ 
+ SUBDIRS +=          \
+-                    \
++	widgets		\
++    api                \
+ 	musicbrainz		\
+ 	widgets			\
+ 	com				\
+-    api             \
+ 	taglib		    \
+     json            \
+ 	jnetlib		    \

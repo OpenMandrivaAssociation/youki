@@ -1,0 +1,11 @@
+--- remote/youki.cc.str	2010-01-31 14:02:06.000000000 +0100
++++ remote/youki.cc	2010-01-31 14:02:18.000000000 +0100
+@@ -217,7 +217,7 @@
+                                   , GtkDialogFlags (0)
+                                   , GTK_MESSAGE_ERROR
+                                   , GTK_BUTTONS_OK
+-                                  , message.c_str()
++                                  , "%s", message.c_str()
+         ) ;
+ 
+         if( error )
