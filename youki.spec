@@ -12,7 +12,7 @@ Patch3: youki_0.05.2-module-link.patch
 Patch4: youki_0.05.2-gcc45.patch
 Patch5: youki_0.05.2-giomm.patch
 Patch6: youki_0.05.2-py2.7.patch
-URL: http://youki.mp/
+URL: https://youki.mp/
 BuildRequires: pygtk2.0-devel
 BuildRequires: boost-devel
 BuildRequires: dbus-c++-devel
